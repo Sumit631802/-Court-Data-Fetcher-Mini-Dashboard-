@@ -1,1 +1,118 @@
-hello
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case Search Form</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('/mhttps://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Indian_Supreme_Court_building_2022.jpg/1920px-Indian_Supreme_Court_building_2022.jpgnt/data/blur-courthouse-modern-courtroom-wooden-260nw-261673https://www.shutterstock.com/image-photo/blur-courthouse-modern-courtroom-wooden-260nw-2616739731.jpg9731.webp') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .form-container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px 50px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    select, input[type="text"] {
+      padding: 12px 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      transition: background-color 0.3s ease;
+    }
+
+    select:focus, input[type="text"]:focus {
+      background-color: #f0f0f0;
+      color: #222;
+    }
+
+    button {
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      background-color: #007bff;
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: 600;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    ul {
+      margin-top: 15px;
+      padding-left: 20px;
+      color: #ffa07a;
+      text-align: left;
+    }
+
+    ul li {
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 450px) {
+      .form-container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container" role="main" aria-labelledby="formTitle">
+    <h2 id="formTitle">Search Case Details</h2>
+    <form method="post">
+      <select name="case_type" required aria-label="Select case type">
+        <option value="">-- Select Case Type --</option>
+        <option value="CNR">CNR Number</option>
+        <option value="Civil">Civil Case</option>
+        <option value="Criminal">Criminal Case</option>
+        <option value="Family">Family Case</option>
+        <option value="Labour">Labour Case</option>
+      </select>
+      <input type="text" name="case_number" placeholder="Case Number" required aria-label="Enter case number" />
+      <input type="text" name="filing_year" placeholder="Filing Year" required aria-label="Enter filing year" />
+      <button type="submit">Search</button>
+    </form>
+
+    <!-- Flash messages block for Flask -->
+    <!-- {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul role="alert">
+          {% for message in messages %}<li>{{ message }}</li>{% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %} -->
+  </div>
+</body>
+</html>
